@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+$base: #2b234f;
+$color: #5c5773 /*#b3b4c7*/;
+$titleColor: whitesmoke;
+$btnColor: #deba87;
+$border: lighten($base, 20%);
+
+$bleu: #395a7d;
+$red: #783637;
+$error: #e74c3c;
+
+body {
+  font-family: Roboto, sans-serif;
+  color: $color;
+  background-color: darken($base, 10%);
+  font-size: 15px;
+}
+
+h1 {
+  color: $titleColor;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  & .modal-content {
+    background-color: $base;
+    margin: 8% auto;
+    width: 80%;
+    height: 80%;
+    border: 2px solid $border;
+    display: flex;
+    flex-flow: column;
+
+    &.small {
+      width: 30%;
+      height: 30%;
+    }
+
+    & .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      & span,
+      & h1 {
+        margin: 0px;
+        font-size: 2em;
+        user-select: none;
+      }
+
+      & span {
+        &:hover {
+          cursor: pointer;
+          color: darken($color, 20%);
+        }
+      }
+    }
+
+    & .modal-body {
+      padding: 20px;
+      overflow: auto;
+      height: 80%;
+      flex: 1 1 auto;
+      display: flex;
+      &.col {
+        flex-flow: column;
+      }
+    }
+  }
+}
+
+#game-board {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: auto;
+
+  & #score-board {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    & > .score-board {
+      height: 24px;
+      width: 20px;
+      margin-right: 2px;
+      background-color: $base;
+      border: 2px solid $border;
+      &:last-child {
+        margin-right: 0px;
+      }
+      &.score-blue {
+        background-color: $bleu;
+      }
+      &.score-red {
+        background-color: $red;
+      }
+    }
+  }
+  & #board {
+    position:relative;
+    & #rule-prompt{
+      position: absolute;
+      top: 0;
+      padding: 10px 15px;
+      width: calc(100% - 38px);
+      height: calc(100% - 20px);
+      background-color: $base;
+      border: 3px solid $border;
+      overflow:auto;
+      color:$titleColor;
+      opacity: .9;
+      z-index:2;
+    }
+
+    & .row {
+      display: flex;
+      height: 128px;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      & .card-slot {
+        position:relative;
+        &.card-red-own {
+          border-color: lighten($red, 20%);
+        }
+        &.card-blue-own {
+          border-color: lighten($bleu, 20%);
+        }
+      }
+    }
+  }
+  & #game-rule{
+    margin-top:5px;
+
+    & div:first-child{
+      float: left;
+      position: absolute;
+      font-size: 1em;
+      pointer-events: none;
+    }
+
+    & div{ 
+      cursor:help;
+      margin-top:5px;
+      display: flex;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;     
+    }
+  }
+  & .hand {
+    display: flex;
+    flex-wrap: wrap;
+    width: 345px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  & .card-slot {
+    position:relative;
+    width: 104px;
+    height: 128px;
+    background-color: $base;
+    border: 3px solid $border;
+    margin: 0 2px 5px 2px;
+
+
+    & .card-slot-lock{
+      display:none;
+      position: absolute;
+      user-select:none;
+      pointer-events:none;
+      left: 50%;
+      top: 50%;
+      z-index:3;
+      transform: translate(-50%, -50%);
+      & svg{
+        height:2em;
+        width:2em;
+        fill:$btnColor;
+        filter: drop-shadow(0px 1px 3px  lighten($red,20%)) drop-shadow(0px -1px 3px lighten($red,20%)) drop-shadow( 1px 0px 3px lighten($red,20%)) drop-shadow( -1px 0px 3px lighten($red,20%));
+
+      }
+    }
+
+    &.locked .card-slot-lock{
+      display:block;
+    }
+    &.locked img {
+      filter: brightness(0.3);
+    }
+    & .card-played {
+      filter: brightness(0.3);
+      opacity: 0.5;
+    }
+
+    & .card-blue-own {
+      background-color: $bleu;
+    }
+
+    & .card-red-own {
+      background-color: $red;
+    }
+
+    & .card-image {
+      transform: rotateY(0deg);
+      transition: transform 0.5s;
+      &.card-capture {
+        animation: 0.5s linear flip;
+      }
+    }
+    & .card-modifier{
+      user-select:none;
+      pointer-events:none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      color: $bleu;
+      font-size: 2em;
+      font-weight: bold;
+      transform: translate(-50%, -50%);
+      text-shadow: 0px 1px 3px lighten($bleu,30%), 0px -1px 3px lighten($bleu,30%), 1px 0px 3px lighten($bleu,30%), -1px 0px 3px lighten($bleu,30%);
+
+      &.desc{
+        color:$red;
+        text-shadow: 0px 1px 3px lighten($red,30%), 0px -1px 3px lighten($red,30%), 1px 0px 3px lighten($red,30%), -1px 0px 3px lighten($red,30%);
+      }
+    }
+
+    & img{  
+      transition: top .5s, left .5s;}
+    & .swap{
+      position:fixed;
+      z-index:1;
+    }
+
+    &.visibility{
+      &-hidden{
+        & > *{
+          filter: blur(15px) !important;
+          &.card-played{
+            filter: blur(15px) brightness(0.3) !important;
+          }
+        }        
+      }   
+    }
+  }
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(380deg);
+  }
+}
+
+#card-deck {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  flex: 1 0 150px;
+  align-items: center;
+  & #deck-slot {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    & .card {
+      margin: 0 5px 5px 0;
+      border: 2px solid $border;
+      height: 76px;
+      width: 64px;
+      border-radius: 10px;
+      background-color: darken($base, 5%);
+      overflow: hidden;
+      position: relative;
+      & .card-stats {
+        position: absolute;
+        color: $titleColor;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        user-select: none;
+        pointer-events: none;
+        &.top,
+        &.bottom {
+          transform: translate(-50%, -0%);
+        }
+        &.right,
+        &.left {
+          transform: translate(-0%, -50%);
+        }
+        &.top {
+          top: 2px;
+          left: 50%;
+        }
+        &.right {
+          top: 50%;
+          right: 2px;
+        }
+        &.bottom {
+          bottom: 2px;
+          left: 50%;
+        }
+        &.left {
+          left: 2px;
+          top: 50%;
+        }
+      }
+
+      & img {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  & #deck-btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: auto;
+  flex: 1 1 auto;
+  & .card-container {
+    width: 104px;
+    user-select: none;
+    margin: 0 5px 5px 0;
+
+    & .card-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & .card-image {
+      transition: filter 0.25s;
+
+      &.in-deck {
+        opacity: 0.1;
+      }
+
+      &:hover {
+        cursor: pointer;
+        filter: drop-shadow(0px 0px 5px darken($base, 60%));
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: darken($base, 5%);
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: $base;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: lighten($base, 60%);
+}
+
+#end-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  & #end-msg {
+    color: $titleColor;
+    font-size: 2em;
+  }
+
+  & #end-score {
+    display: flex;
+    font-size: 3em;
+    & div {
+      margin-right: 5px;
+    }
+  }
+}
+
+button:not(.icon-btn) {
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  font: 700 12px / 2.4rem Roboto, sans-serif;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-flex;
+  color: $base;
+  background-color: $btnColor;
+}
+
+button.icon-btn {
+  background: none;
+  border: none;
+  outline: none;
+  color: $btnColor;
+  width: 3.5em;
+  height: 1.5em;
+  cursor: pointer;
+  & > svg {
+    width: 100%;
+    height: 100%;
+    fill: $btnColor;
+    stroke: $btnColor;
+  }
+}
+
+#error {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  background-color: $error;
+  z-index: 100;
+  bottom: -40px;
+  transition: bottom 0.5s;
+  &.show {
+    bottom: 0px;
+  }
+
+  & &-picto {
+    padding: 5px 0px;
+    background-color: darken($error, 10%);
+    & svg {
+      height: 100%;
+      fill: $border;
+    }
+  }
+
+  & &-msg {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: $titleColor;
+    line-height: 40px;
+  }
+}

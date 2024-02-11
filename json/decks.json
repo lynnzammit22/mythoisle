@@ -1,0 +1,380 @@
+{
+  "query": {},
+  "count": 2,
+  "results": [
+    {
+      "id": 1,
+      "notes": "",
+      "rating": 1,
+      "user": "user1",
+      "updated": false,
+      "purpose": {
+        "type": "Rule",
+        "name": "All Open"
+      },
+      "cards": [
+        {
+          "id": 1,
+          "name": "Xifajk",
+          "description": "Xifajk, the Mischievous Imp, is a small creature that revels in creating disharmony and mischief. With a penchant for pranks, this trickster delights in breaking precious objects, hiding belongings, and causing confusion and disorientation. Its favorite victims are those burdened with work, as it slyly induces mistakes, leaving them frustrated and forced to redo their labor.",
+          "stars": 2,
+          "order_group": 0,
+          "order": 1,
+          "deck_order": 1,
+          "number": "No. 1",
+          "image": "./images/cards/large/1.png",
+          "image_red": "./images/cards/large/red/1.png",
+          "image_blue": "./images/cards/large/blue/1.png",
+          "link": "./cards/1",
+          "stats": {
+            "numeric": {
+              "top": 4,
+              "right": 2,
+              "bottom": 3,
+              "left": 4
+            },
+            "formatted": {
+              "top": 4,
+              "right": 2,
+              "bottom": 3,
+              "left": 4
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Dark",
+            "image": null
+          }
+        },
+        {
+          "id": 2,
+          "name": "Sarangu",
+          "description": "Sarangu, also known as the Sack Man, is a haunting presence, a tall and thin figure that emerges from the shadows, a slave hunter of the netherworlds. Prowling the dark streets and alleys, he seeks out children who linger outside after nightfall. Carrying a malevolent sack on his back, the captured victims are swiftly thrown into it, destined for a grim fate as slaves in the otherworldly realms.",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 100,
+          "order_group": 0,
+          "order": 2,
+          "deck_order": 1,
+          "number": "No. 2",
+          "image": "./images/cards/large/2.png",
+          "image_red": "./images/cards/large/red/2.png",
+          "image_blue": "./images/cards/large/blue/2.png",
+          "link": "./cards/2",
+          "stats": {
+            "numeric": {
+              "top": 2,
+              "right": 2,
+              "bottom": 7,
+              "left": 2
+            },
+            "formatted": {
+              "top": 2,
+              "right": 2,
+              "bottom": 7,
+              "left": 2
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        },
+        {
+          "id": 3,
+          "name": "Belliegħa",
+          "description": "The well-engulfed, lurking in the shadows of dark waters, possesses a sinister ability known as 'Lurking Grasp.' This malevolent power allows the creature to extend its long, sinewy appendage with remarkable precision, reaching out to snatch unsuspecting prey from a distance. The appendage moves like a phantom, swift and silent, pulling victims towards the creature's gaping maw with an eerie and irresistible force.",
+          "stars": 3,
+          "patch": "2.51",
+          "sell_price": 0,
+          "order_group": 0,
+          "order": 3,
+          "deck_order": 1,
+          "number": "No. 3",
+          "image": "./images/cards/large/3.png",
+          "image_red": "./images/cards/large/red/3.png",
+          "image_blue": "./images/cards/large/blue/3.png",
+          "link": "./cards/3",
+          "stats": {
+            "numeric": {
+              "top": 4,
+              "right": 3,
+              "bottom": 3,
+              "left": 3
+            },
+            "formatted": {
+              "top": 4,
+              "right": 3,
+              "bottom": 3,
+              "left": 3
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        },
+        {
+          "id": 4,
+          "name": "Sirena",
+          "description": "Sirena, captivating and elusive, are not merely sea nymphs but embody a blend of merfolk and predatory prowess. Found along the coasts of Malta and Gozo, these ethereal beings possess double shark tails, their allure heightened by flowing locks and supple upper bodies. Legends whisper of their enchanting songs drawing sailors to their watery graves, yet tales persist of a wounded Sirena, stranded upon Senglea's shore, whose mournful melody captivated seafarers far and wide. It is said a brave youth, lured by her haunting tune, discovered her hidden in a cave, only for her to transform into stone upon his kiss. Thus, the Siren's Cave was born, immortalizing the tragic tale of love and loss amidst the waves.",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 100,
+          "order_group": 0,
+          "order": 4,
+          "deck_order": 1,
+          "number": "No. 4",
+          "image": "./images/cards/large/4.png",
+          "image_red": "./images/cards/large/red/4.png",
+          "image_blue": "./images/cards/large/blue/4.png",
+          "link": "./cards/4",
+          "stats": {
+            "numeric": {
+              "top": 2,
+              "right": 3,
+              "bottom": 4,
+              "left": 4
+            },
+            "formatted": {
+              "top": 2,
+              "right": 3,
+              "bottom": 4,
+              "left": 4
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        },
+        {
+          "id": 5,
+          "name": "Sittażbrilja",
+          "description": "The Sibyl, revered female prophets of antiquity held sway over empires, their insights shaping the course of history. With an otherworldly connection to the divine, Sibyls transcended mortal limitations, offering counsel to rulers and seekers alike.",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 100,
+          "order_group": 0,
+          "order": 5,
+          "deck_order": 1,
+          "number": "No. 5",
+          "image": "./images/cards/large/5.png",
+          "image_red": "./images/cards/large/red/5.png",
+          "image_blue": "./images/cards/large/blue/5.png",
+          "link": "./cards/5",
+          "stats": {
+            "numeric": {
+              "top": 2,
+              "right": 4,
+              "bottom": 3,
+              "left": 5
+            },
+            "formatted": {
+              "top": 2,
+              "right": 4,
+              "bottom": 3,
+              "left": 5
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "notes": "",
+      "rating": 1,
+      "user": "user2",
+      "updated": false,
+      "purpose": {
+        "type": "Rule",
+        "name": "All Open"
+      },
+      "cards": [
+        {
+          "id": 6,
+          "name": "Golfu",
+          "description": "Lorem Ipsum",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 0,
+          "order_group": 0,
+          "order": 6,
+          "deck_order": 1,
+          "number": "No. 6",
+          "image": "./images/cards/large/6.png",
+          "image_red": "./images/cards/large/red/6.png",
+          "image_blue": "./images/cards/large/blue/6.png",
+          "link": "./cards/6",
+          "stats": {
+            "numeric": {
+              "top": 3,
+              "right": 4,
+              "bottom": 3,
+              "left": 3
+            },
+            "formatted": {
+              "top": 3,
+              "right": 4,
+              "bottom": 3,
+              "left": 3
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        },
+        {
+          "id": 7,
+          "name": "Kavallier Iswed",
+          "description": "Lorem Ipsum",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 0,
+          "order_group": 0,
+          "order": 7,
+          "deck_order": 1,
+          "number": "No. 7",
+          "image": "./images/cards/large/7.png",
+          "image_red": "./images/cards/large/red/7.png",
+          "image_blue": "./images/cards/large/blue/7.png",
+          "link": "./cards/7",
+          "stats": {
+            "numeric": {
+              "top": 4,
+              "right": 2,
+              "bottom": 5,
+              "left": 3
+            },
+            "formatted": {
+              "top": 4,
+              "right": 2,
+              "bottom": 5,
+              "left": 3
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        },
+        {
+          "id": 8,
+          "name": "Għafrit",
+          "description": "Lorem Ipsum",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 100,
+          "order_group": 0,
+          "order": 8,
+          "deck_order": 1,
+          "number": "No. 8",
+          "image": "./images/cards/large/8.png",
+          "image_red": "./images/cards/large/red/8.png",
+          "image_blue": "./images/cards/large/blue/8.png",
+          "link": "./cards/8",
+          "stats": {
+            "numeric": {
+              "top": 3,
+              "right": 3,
+              "bottom": 3,
+              "left": 4
+            },
+            "formatted": {
+              "top": 3,
+              "right": 3,
+              "bottom": 3,
+              "left": 4
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        },
+        {
+          "id": 9,
+          "name": "Għul",
+          "description": "Lorem Ipsum",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 100,
+          "order_group": 0,
+          "order": 9,
+          "deck_order": 1,
+          "number": "No. 9",
+          "image": "./images/cards/large/9.png",
+          "image_red": "./images/cards/large/red/9.png",
+          "image_blue": "./images/cards/large/blue/9.png",
+          "link": "./cards/9",
+          "stats": {
+            "numeric": {
+              "top": 5,
+              "right": 2,
+              "bottom": 5,
+              "left": 2
+            },
+            "formatted": {
+              "top": 5,
+              "right": 2,
+              "bottom": 5,
+              "left": 2
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        },
+        {
+          "id": 10,
+          "name": "Serp ta Seba Rjus",
+          "description": "Lorem Ipsum",
+          "stars": 1,
+          "patch": "2.51",
+          "sell_price": 0,
+          "order_group": 0,
+          "order": 10,
+          "deck_order": 1,
+          "number": "No. 10",
+          "image": "./images/cards/large/10.png",
+          "image_red": "./images/cards/large/red/10.png",
+          "image_blue": "./images/cards/large/blue/10.png",
+          "link": "./cards/10",
+          "stats": {
+            "numeric": {
+              "top": 2,
+              "right": 5,
+              "bottom": 2,
+              "left": 5
+            },
+            "formatted": {
+              "top": 2,
+              "right": 5,
+              "bottom": 2,
+              "left": 5
+            }
+          },
+          "type": {
+            "id": 0,
+            "name": "Normal",
+            "image": null
+          }
+        }
+      ]
+    }
+  ]
+}
